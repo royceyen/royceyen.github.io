@@ -1932,44 +1932,53 @@ input, select, textarea {
 			}
 
 /* Box */
-
 	.box {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: flex-start; /* 靠上對齊 */
 		height: 100%;
-		flex-wrap:wrap;
+		flex-wrap: wrap;
 		background: #fff;
 		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 		text-align: center;
-		padding: 2em;
+		padding: 1em; /* 減少 padding */
 	}
 
-		.box.style1 {
-			padding: 20px;
-			box-sizing: border-box; /* 確保 padding 不會增加區塊高度 */
-			min-height: 250px; /* 確保最低高度一致 */
-			display: flex; /* 保持內容垂直居中 */
-			flex-direction: column;
-			justify-content: space-between; /* 確保內容垂直間距均勻 */
-		}
+	.box.style1 {
+		padding: 20px; /* 保持稍微的內邊距 */
+		box-sizing: border-box; /* 確保 padding 不會增加區塊高度 */
+		min-height: 250px; /* 確保最低高度一致 */
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start; /* 靠上對齊 */
+	}
 
-			.box.style1 h3 {
-				flex-grow: 1; /* 讓標題區域自動伸展 */
-				margin-bottom: 0.5em;
-			}
+	.box.style1 h3 {
+		flex-grow: 0; /* 不讓標題區域伸展 */
+		margin-top: 15px; /* 增加圖片和標題間的距離 */
+		margin-bottom: 10px; /* 減少底部間距 */
+	}
 
-		.box.style2 h3 {
-			margin-bottom: 0.25em;
-		}
+	.box.style1 .image {
+		margin-top: 20px; /* 增加圖片與上緣的距離 */
+		width: auto;
+		max-width: 100px;
+		height: auto;
+		display: block;
+		margin: 0 auto 10px;
+	}
 
-		.box.style2 .image {
-			position: relative;
-			left: 2em;
-			top: 2em;
-			margin: -4em 0 4em -4em;
-			width: auto;
-		}
+	.box.style2 h3 {
+		margin-bottom: 0.25em;
+	}
+
+	.box.style2 .image {
+		position: relative;
+		left: 2em;
+		top: 2em;
+		margin: -2em 0 2em -4em;
+		width: auto;
+	}
 
 /* Icons */
 
@@ -2143,33 +2152,61 @@ input, select, textarea {
 		text-align: left;
 	}
 
-		#top .image {
-			border-radius: 100%;
-			width: 20em;
-			height: 20em;
-			margin: 0;
-		}
+	#top .image {
+		border-radius: 100%;
+		width: 20em;
+		height: 20em;
+		margin: 0;
+	}
 
-			#top .image img {
-				border-radius: 100%;
-			}
+	#top .image img {
+		border-radius: 100%;
+	}
 
-		#top h1 {
-			margin-top: 0.35em;
-		}
+	#top h1 {
+		margin-top: 0.35em;
+	}
 
-		#top p {
-			font-size: 1.5em;
-			line-height: 1.75em;
-		}
+	#top p {
+		font-size: 1.5em;
+		line-height: 1.75em;
+	}
 
-			#top p a {
-				color: inherit;
-			}
+	#top p a {
+		color: inherit;
+	}
 
 	#contact footer {
 		font-size: 0.9em;
 	}
+
+	/* 新增 Portfolio 的樣式 */
+
+	/* 調整每個圖片 */
+	article.box.style2 .image img {
+		max-width: 100%; /* 確保圖片寬度不超過容器寬度 */
+		height: auto; /* 保持圖片比例 */
+		padding: 10px; /* 增加內邊距來留出空隙 */
+		box-sizing: border-box; /* 包含內邊距在內 */
+	}
+
+	/* 讓每個項目在 hover 時放大 */
+	article.box.style2 {
+		transition: transform 0.3s ease; /* 增加平滑過渡效果 */
+	}
+
+	article.box.style2:hover {
+		transform: scale(1.05); /* 放大 5% */
+	}
+	
+	article.box.style2 .image {
+		display: flex; /* 使用 flexbox 排列 */
+		justify-content: center; /* 讓圖片水平居中 */
+		align-items: center; /* 讓圖片垂直居中 */
+		padding: 2.5%; /* 增加內邊距來留出空隙 */
+		box-sizing: border-box; /* 包含內邊距在內 */
+	}
+	
 
 /* Copyright */
 
